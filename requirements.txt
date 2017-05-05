@@ -1,0 +1,5 @@
+BeautifulSoup4
+MySQLdb
+requests
+urllib2
+uuid
