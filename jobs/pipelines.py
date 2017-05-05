@@ -5,8 +5,7 @@
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
-import MySQLdb
-import MySQLdb.cursors
+import pymysql.cursors
 from jobs import settings
 from jobs.items import JobsItem
 MYSQL_HOSTS = settings.MYSQL_HOSTS
@@ -30,7 +29,7 @@ class JobsPipeline(object):
                 print "already exist."
                 pass
             else:
-                id = item['id']
+                id = str(item['id'])
                 title = item['title']
                 salary = item['salary']
                
