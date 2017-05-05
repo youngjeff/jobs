@@ -14,7 +14,7 @@ MYSQL_PASSWORD = settings.MYSQL_PASSWORD
 MYSQL_PORT = settings.MYSQL_PORT
 MYSQL_DB = settings.MYSQL_DB
 MYSQL_charset = settings.MYSQL_utf8
-cnx = MySQLdb.connect(host=MYSQL_HOSTS, user=MYSQL_USER, passwd=MYSQL_PASSWORD, db=MYSQL_DB, port=MYSQL_PORT,charset = MYSQL_charset)
+cnx = pymysql.connect(host=MYSQL_HOSTS, user=MYSQL_USER, passwd=MYSQL_PASSWORD, db=MYSQL_DB, port=MYSQL_PORT,charset = MYSQL_charset)
 cur = cnx.cursor()
 
 
