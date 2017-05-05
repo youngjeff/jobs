@@ -1,5 +1,6 @@
 BeautifulSoup4
-MySQLdb
+MySQL-python
 requests
 urllib2
 uuid
+lxml
