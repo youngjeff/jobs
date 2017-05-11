@@ -18,7 +18,7 @@ class jobsSpider(scrapy.Spider):
     def start_requests(self):
         start = 1
         for i in range(1,150):
-            url = ("http://nj.58.com/tech/pn%s/" % str(start))
+            url = ("http://cd.58.com/tech/pn%s/" % str(start))
             start = start + 1
             yield Request(url, self.parse)
         print "数据获取完毕"
@@ -51,7 +51,7 @@ class jobsSpider(scrapy.Spider):
                
                 
                 item['address'] = html.find('div', class_='subitem_con work_adress').find('p',class_='detail_adress').get_text()
-                item['city'] = u"南京" 
+                item['city'] = u"成都" 
 
                 yield item
         except Exception, e:
