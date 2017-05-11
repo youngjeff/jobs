@@ -26,7 +26,7 @@ class JobsPipeline(object):
         
 
         try:
-            sql = "SELECT * FROM jobs WHERE title = '%s' and city = '%s'" % (item['title'], item['city'])
+            sql = "SELECT * FROM jobs WHERE title = '%s' and city = '%s' and company = '%s'" % (item['title'], item['city'],item['company'])
 
             cur.execute(sql)
             result = cur.fetchall()
