@@ -27,11 +27,11 @@ class jobsSpider(scrapy.Spider):
             headers = {}
             headers["User-Agent"] = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36"
             
-            time.sleep(15)
+            time.sleep(5)
             item = JobsItem()
             works = BeautifulSoup(response.text, 'lxml').find("div", class_="infolist").find_all("dl")
             for work in works:
-                time.sleep(5)
+                time.sleep(1)
                 job_url = work.find('dt').find('a')
                 url = job_url['href']
                 request = urllib2.Request(url=url, headers=headers)
