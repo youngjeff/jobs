@@ -60,6 +60,7 @@ DOWNLOADER_MIDDLEWARES = {
     # 'itjuzi_dis.middlewares.ProxyMiddleware': 90,
     'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 100,
     'jobs.middlewares.RotateUserAgentMiddleware': 200,
+    'jobs.middlewares.ProxyMiddleware': 200,  
 }
 # Enable or disable extensions
 # See http://scrapy.readthedocs.org/en/latest/topics/extensions.html
@@ -99,9 +100,9 @@ RANDOMIZE_DOWNLOAD_DELAY = True
 # HTTPCACHE_DIR = 'httpcache'
 # HTTPCACHE_IGNORE_HTTP_CODES = []
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
-MYSQL_HOSTS = '112.74.187.40'
+MYSQL_HOSTS = '52.163.48.238'
 MYSQL_USER = 'root'
-MYSQL_PASSWORD = '123'
-MYSQL_PORT = 3306
+MYSQL_PASSWORD = 'root'
+MYSQL_PORT = 10101
 MYSQL_DB = '58city'
 MYSQL_utf8 = 'utf8'

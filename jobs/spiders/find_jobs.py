@@ -8,6 +8,7 @@ from jobs.items import JobsItem
 import urllib2
 import uuid
 import time
+import random
 class jobsSpider(scrapy.Spider):
     name = '58jobs'
     allowed_domains = ["58.com"]
@@ -17,9 +18,11 @@ class jobsSpider(scrapy.Spider):
 
     def start_requests(self):
         start = 1
-        for i in range(1,150):
-            url = ("http://cd.58.com/tech/pn%s/" % str(start))
-            start = start + 1
+        i = 1
+        while i<150:
+            ua = random.choice(range(150))
+            url = ("http://cd.58.com/tech/pn%s/" % str(ua))
+            i=i+1
             yield Request(url, self.parse)
         print "数据获取完毕"
     def parse(self, response):
