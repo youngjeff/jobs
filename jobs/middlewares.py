@@ -7,6 +7,12 @@ import pymysql
 
 from scrapy.contrib.downloadermiddleware.useragent import UserAgentMiddleware
 
+MYSQL_HOSTS = settings.MYSQL_HOSTS
+MYSQL_USER = settings.MYSQL_USER
+MYSQL_PASSWORD = settings.MYSQL_PASSWORD
+MYSQL_PORT = settings.MYSQL_PORT
+MYSQL_DB = settings.MYSQL_DB
+MYSQL_charset = settings.MYSQL_utf8
 
 class RotateUserAgentMiddleware(UserAgentMiddleware):
     def __init__(self, user_agent=''):
@@ -64,7 +70,7 @@ class ProxyMiddleware(object):
     # overwrite process request
     def process_request(self, request, spider):
         # Set the location of the proxy
-        cnx = pymysql.connect(host="52.163.48.238", user="root", passwd="root", db="ipproxy", port=10101,charset = "utf8")
+        cnx = pymysql.connect(host=MYSQL_HOSTS, user=MYSQL_USER, passwd=MYSQL_PASSWORD, db=MYSQL_DB, port=MYSQL_PORT,charset=MYSQL_charset)
         cur = cnx.cursor()
         sql = "select ip,port from free_ipproxy"
         cur.execute(sql)
