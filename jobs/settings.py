@@ -100,9 +100,18 @@ RANDOMIZE_DOWNLOAD_DELAY = True
 # HTTPCACHE_DIR = 'httpcache'
 # HTTPCACHE_IGNORE_HTTP_CODES = []
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+<<<<<<< HEAD
 MYSQL_HOSTS = os.environ.get("MYSQL_HOSTS")
 MYSQL_USER = os.environ.get("MYSQL_USER")
 MYSQL_PASSWORD = os.environ.get("MYSQL_PASSWORD")
 MYSQL_PORT = os.environ.get("MYSQL_PORT")
 MYSQL_DB = os.environ.get("MYSQL_DB")
 MYSQL_utf8 = os.environ.get("MYSQL_utf8")
+=======
+MYSQL_HOSTS = '52.163.48.238'
+MYSQL_USER = 'root'
+MYSQL_PASSWORD = 'root'
+MYSQL_PORT = 10101
+MYSQL_DB = '58city'
+MYSQL_utf8 = 'utf8'
+>>>>>>> eeae1065e656b710a129888489dec437118e81ca
